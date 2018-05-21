@@ -22,7 +22,7 @@ class CreateAdminTable extends Migration
 
             $table->string('email', 100)->unique()->nullable()->comment('电子邮箱');
 
-            $table->string('password', 60)->comment('密码');
+            $table->string('password', 255)->comment('密码');
 
             $table->rememberToken()->comment('记住密码的Token');
 

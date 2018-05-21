@@ -15,3 +15,6 @@ Route::get('/','IndexController@index');
 //登录
 Route::get('admin/login','Admin\LoginController@login');
 Route::post('admin/login','Admin\LoginController@postLogin')->name('AdminLogin');
+//后台
+Route::get('admin/index','Admin\IndexController@index');
+Route::get('admin/logout','Admin\LoginController@logout');
