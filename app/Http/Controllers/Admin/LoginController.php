@@ -24,12 +24,8 @@ class LoginController extends Controller
         if ($admin->username != $request->username || Crypt::decrypt($admin->password) != $request->password) {
             return back()->withErrors('用户名与密码不匹配。');
         }
-        $request->session()->put('admin',$admin);
+        session(['admin'=>$admin]);
         return redirect('admin/index');
     }
-    public function logout()
-    {
-        session('admin',null);
-        return redirect('admin/login');
-    }
+
 }

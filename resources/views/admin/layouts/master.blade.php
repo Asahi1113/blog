@@ -81,7 +81,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu purple pull-right">
                                 <li><a href="{{--{{ route('RootChangePassowrd') }}--}}">修改密码</a></li>
-                                <li><a href="{{--{{ route('RootLogout') }}--}}"><i class="fa fa-sign-out pull-right"></i> 退出</a></li>
+                                <li><a href="{{ route('AdminLogout') }}"><i class="fa fa-sign-out pull-right"></i> 退出</a></li>
                             </ul>
                         </li>
                     </ul>
