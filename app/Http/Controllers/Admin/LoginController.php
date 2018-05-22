@@ -27,5 +27,10 @@ class LoginController extends Controller
         session(['admin'=>$admin]);
         return redirect('admin/index');
     }
-
+    //退出登录
+    public function logout()
+    {
+        session(['admin'=>null]);
+        return redirect('admin/login');
+    }
 }

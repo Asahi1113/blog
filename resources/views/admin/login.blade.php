@@ -24,7 +24,7 @@
 
 <h2 class="form-heading">管理员登录</h2>
 <div class="container log-row">
-    <form class="form-signin" action="{{ route('AdminLogin') }}" method="post">
+    <form class="form-signin" action="{{ url('admin/login') }}" method="post">
         {!! csrf_field() !!}
         <div class="login-wrap">
             <input type="text" class="form-control" placeholder="用户名" name="username" value="{{ Request::old('username') }}" autofocus>

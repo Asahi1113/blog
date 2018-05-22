@@ -13,10 +13,4 @@ class IndexController extends CommonController
         return view('admin.index');
     }
 
-    //退出登录
-    public function logout()
-    {
-        session(['admin'=>null]);
-        return redirect('admin/login');
-    }
 }
