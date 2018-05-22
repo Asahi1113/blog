@@ -24,17 +24,13 @@
                             </tr>
                             </thead>
                             <tbody>
-                            {{--@foreach ($operation_records as $item)
                                 <tr>
-                                    <td>{{ $item->created_at }}</td>
-                                    <td>{{ preg_replace('/^routes\./', '', trans('routes.' . $item->route_name)) }}</td>
+                                    <td>2018-05-22 10:46:22</td>
+                                    <td>编辑管理员（操作）</td>
                                     <td>
-                                        @foreach($item->ips as $ip)
-                                            @include('root.components.tooltip', [ 'text' => $ip, 'title' => ip_query($ip) ])
-                                        @endforeach
+                                        <span class="tooltips " data-toggle="tooltip" data-placement="top" data-original-title="纯真网络 2017年9月15日IP数据">127.0.0.1</span>														</td>
                                     </td>
                                 </tr>
-                            @endforeach--}}
                             </tbody>
                         </table>
                     {{--@endif--}}
