@@ -19,4 +19,6 @@ Route::post('admin/login','Admin\LoginController@postLogin');
 Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['admin.login']],function(){
     Route::get('index','IndexController@index');
     Route::get('logout','LoginController@logout');
+    Route::get('modify-password','profileController@getModifyPassword');
+    Route::post('modify-password','profileController@postModifyPassword');
 });

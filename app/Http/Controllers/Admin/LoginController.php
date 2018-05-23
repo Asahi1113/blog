@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Admin;
-use Illuminate\Http\Request;
 use App\Http\Requests\Admin\AuthLogin;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Crypt;
 
 class LoginController extends Controller
 {
@@ -17,11 +15,11 @@ class LoginController extends Controller
         }
         return view('admin.login');
     }
-
+    //登录验证
     public function postLogin(Authlogin $request)
     {
-        $admin = Admin::first();
-        if ($admin->username != $request->username || Crypt::decrypt($admin->password) != $request->password) {
+        $admin = Admin::where('username',$request->username)->first();
+        if ($admin->username != $request->username || $admin->password != md5($request->password)) {
             return back()->withErrors('用户名与密码不匹配。');
         }
         session(['admin'=>$admin]);
@@ -33,4 +31,5 @@ class LoginController extends Controller
         session(['admin'=>null]);
         return redirect('admin/login');
     }
+
 }
