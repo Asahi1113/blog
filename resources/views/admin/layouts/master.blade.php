@@ -98,7 +98,7 @@
             <span class="sub-title">@yield('small-title')</span>
             <div class="state-information">
                 <ol class="breadcrumb m-b-less bg-less">
-                    <li><a href="{{--{{ route('RootDashboard') }}--}}">仪表盘</a></li>
+                    <li><a href="{{ url('admin/index') }}">仪表盘</a></li>
                     @yield('breadcrumb')
                 </ol>
             </div>

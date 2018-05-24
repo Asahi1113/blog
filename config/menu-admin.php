@@ -39,6 +39,6 @@ return [
         '权限管理' => 'RootPermissionList'
     ],
     '<i class="fa fa-lock"></i> <span>账号信息</span>' => [
-        '修改密码' => 'RootChangePassowrd'
+        '修改密码' => 'admin/modify-password'
     ]
 ];
