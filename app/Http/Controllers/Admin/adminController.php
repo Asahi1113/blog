@@ -22,9 +22,6 @@ class adminController extends CommonController
         }
         $data = $admins->paginate($request->cookie('limit', 15));
         $data->appends($request->all());
-        foreach ($data as $v) {
-            dump($v->roles_name);
-        }
-        return view('admin.admin.list');
+        return view('admin.admin.list',compact('data'));
     }
 }

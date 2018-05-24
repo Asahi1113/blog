@@ -10,11 +10,12 @@ class Admin extends Model
     protected $appends = [
         'roles_name'
     ];
+
     /**
-     * 角色列表
+     * 角色名
      */
-    public function roles()
+    public function getRolesNameAttribute()
     {
-        return $this->belongsToMany(Role::class, 'admin_roles')->withTimestamps();
+        return $this->id == 1 ? 'Root' : join(' & ', $this->roles->pluck('name')->all());
     }
 }

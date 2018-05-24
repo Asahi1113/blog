@@ -32,18 +32,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{--@foreach ($data as $item)
+                        @foreach ($data as $item)
                             <tr data-id="{{ $item->id }}" data-username="{{ $item->username }}">
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->username }}</td>
                                 <td>{{ $item->roles_name }}</td>
                                 <td>{{ $item->created_at }}</td>
                                 <td>
-                                    <a class="btn btn-xs btn-info" href="{{ route('RootAdminEdit', ['id'=>$item->id]) }}"><i class="fa fa-edit"></i> 编辑</a>
+                                    <a class="btn btn-xs btn-info" href="{{--{{ route('RootAdminEdit', ['id'=>$item->id]) }}--}}"><i class="fa fa-edit"></i> 编辑</a>
                                     <button class="btn btn-xs btn-danger @if ($item->id === 1 || $item->id === auth()->id())disabled @endif" type="button" data-role="delete"><i class="fa fa-trash-o"></i> 删除</button>
                                 </td>
                             </tr>
-                        @endforeach--}}
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
