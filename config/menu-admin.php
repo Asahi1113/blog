@@ -34,7 +34,7 @@ return [
         '操作日志' => 'RootOperationRecordList'
     ],
     '<i class="fa fa-cogs"></i> <span>管理人员</span>' => [
-        '管理员账号' => 'RootAdminList',
+        '管理员账号' => 'admin/admin-list',
         '角色管理' => 'RootRoleList',
         '权限管理' => 'RootPermissionList'
     ],

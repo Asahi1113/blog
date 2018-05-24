@@ -21,4 +21,5 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['admin.login
     Route::get('logout','LoginController@logout');
     Route::get('modify-password','profileController@getModifyPassword');
     Route::post('modify-password','profileController@postModifyPassword');
+    Route::get('admin-list','adminController@getList');
 });
