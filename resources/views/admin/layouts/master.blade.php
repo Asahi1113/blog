@@ -80,8 +80,8 @@
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu purple pull-right">
-                                <li><a href="{{ url('admin/modify-password') }}">修改密码</a></li>
-                                <li><a href="{{ url('admin/logout') }}"><i class="fa fa-sign-out pull-right"></i> 退出</a></li>
+                                <li><a href="{{ route('AdminChangePassowrd') }}">修改密码</a></li>
+                                <li><a href="{{ route('AdminLogout') }}"><i class="fa fa-sign-out pull-right"></i> 退出</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -98,7 +98,7 @@
             <span class="sub-title">@yield('small-title')</span>
             <div class="state-information">
                 <ol class="breadcrumb m-b-less bg-less">
-                    <li><a href="{{ url('admin/index') }}">仪表盘</a></li>
+                    <li><a href="{{ route('AdminDashboard') }}">仪表盘</a></li>
                     @yield('breadcrumb')
                 </ol>
             </div>

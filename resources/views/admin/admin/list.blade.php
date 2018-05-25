@@ -5,7 +5,7 @@
 
 @section('breadcrumb')
     <li>管理人员</li>
-    <li><a href="{{ url('admin/admin-list') }}">管理员账号</a></li>
+    <li><a href="{{ route('AdminList') }}">管理员账号</a></li>
 @endsection
 
 @section('main')
@@ -58,7 +58,7 @@
     $('[data-role="delete"]').on('click', function(){
         var data = $(this).parents('tr').data();
         iconfirm({
-            action	: '{{ url('admin/admin-delete') }}',
+            action	: '{{ route('AdminDelete') }}',
             body		: '确定要删除管理员 ' + data.username + ' 吗？',
             data		: data
         });

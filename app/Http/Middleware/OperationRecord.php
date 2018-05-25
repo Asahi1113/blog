@@ -24,8 +24,8 @@ class OperationRecord
         $record = new OperationRecordModel();
         $record->user()->associate($admin);
         $record->method = $request->getMethod();
-        $record->route_name = $request->path();//'RootOrderList';//Route::currentRouteName();
-        $record->route_action = 'App\Http\Controllers\Root\HomeController@getDashboard';//Route::currentRouteAction();
+        $record->route_name = Route::currentRouteName();
+        $record->route_action = Route::currentRouteAction();
         $record->input = $request->input();
         $record->user_agent = $request->header('user-agent');
         $record->ips = $request->getClientIps();

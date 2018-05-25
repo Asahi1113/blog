@@ -13,15 +13,15 @@
         <ul class="nav nav-pills nav-stacked side-navigation">
             @foreach (config('menu-admin') as $top => $son)
                 @if ( ! is_array($son))
-                    <li @if ($son == 'RootDashboard') class="active" @endif>
-                        <a href="{{url('admin/index')}}">{!! $top !!}</a>
+                    <li @if ($son == 'AdminDashboard') class="active" @endif>
+                        <a href="{{ route($son) }}">{!! $top !!}</a>
                     </li>
                 @else
                     <li class="menu-list">
                         <a href="#"> {!! $top !!}</a>
                         <ul class="child-list">
                             @foreach ($son as $title => $route_name)
-                                    <li><a href="{{url($route_name)}}">{!! $title !!}</a></li>
+                                    <li><a href="{{ route($route_name) }}">{!! $title !!}</a></li>
                             @endforeach
                         </ul>
                     </li>

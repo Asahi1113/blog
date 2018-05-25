@@ -5,7 +5,7 @@
 
 @section('breadcrumb')
     <li>账号信息</li>
-    <li><a href="{{ url('admin/modify-password') }}">修改密码</a></li>
+    <li><a href="{{ route('AdminChangePassowrd') }}">修改密码</a></li>
 @endsection
 
 @section('main')
@@ -14,7 +14,7 @@
             <section class="panel">
                 <header class="panel-heading"> 修改密码 </header>
                 <div class="panel-body">
-                    <form class="form-horizontal" action="{{ url('admin/modify-password') }}" method="POST">
+                    <form class="form-horizontal" action="{{ route('AdminChangePassowrdPost') }}" method="POST">
                         {!! csrf_field() !!}
                         <div class="form-group">
                             <label class="col-lg-2 col-sm-2 control-label">旧密码</label>

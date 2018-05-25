@@ -17,10 +17,28 @@ Route::get('admin/login','Admin\LoginController@login');
 Route::post('admin/login','Admin\LoginController@postLogin');
 //后台
 Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['admin.login','admin.operation']],function(){
-    Route::get('index','IndexController@index');
-    Route::get('logout','LoginController@logout');
-    Route::get('modify-password','profileController@getModifyPassword');
-    Route::post('modify-password','profileController@postModifyPassword');
-    Route::get('admin-list','adminController@getList');
-    Route::post('admin-delete','adminController@postDelete');
+    Route::get('index',[
+        'as'=>'AdminDashboard',
+        'uses'=>'IndexController@index'
+    ]);
+    Route::get('logout',[
+        'as'=>'AdminLogout',
+        'uses'=>'LoginController@logout'
+    ]);
+    Route::get('modify-password',[
+        'as'=>'AdminChangePassowrd',
+        'uses'=>'profileController@getModifyPassword'
+    ]);
+    Route::post('modify-password',[
+        'as'=>'AdminChangePassowrdPost',
+        'uses'=>'profileController@postModifyPassword'
+    ]);
+    Route::get('admin-list',[
+        'as'=>'AdminList',
+        'uses'=>'adminController@getList'
+    ]);
+    Route::post('admin-delete',[
+        'as'=>'AdminDelete',
+        'uses'=>'adminController@postDelete'
+    ]);
 });
