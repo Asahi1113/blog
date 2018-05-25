@@ -40,14 +40,14 @@
                                 <td>{{ $item->created_at }}</td>
                                 <td>
                                     <a class="btn btn-xs btn-info" href="{{--{{ route('RootAdminEdit', ['id'=>$item->id]) }}--}}"><i class="fa fa-edit"></i> 编辑</a>
-                                    <button class="btn btn-xs btn-danger @if ($item->id === 1 || $item->id === auth()->id())disabled @endif" type="button" data-role="delete"><i class="fa fa-trash-o"></i> 删除</button>
+                                    <button class="btn btn-xs btn-danger @if ($item->username == 'admin')disabled @endif" type="button" data-role="delete"><i class="fa fa-trash-o"></i> 删除</button>
                                 </td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                 </div>
-                {{--@include('root.layouts.paginate')--}}
+                @include('admin.layouts.paginate')
             </section>
         </div>
     </div>
@@ -55,14 +55,14 @@
 
 @push('script')
 <script>
-    /*$('[data-role="delete"]').on('click', function(){
+    $('[data-role="delete"]').on('click', function(){
         var data = $(this).parents('tr').data();
         iconfirm({
-            action	: '{{--{{ route('RootAdminDelete') }}--}}',
+            action	: '{{ url('admin/admin-delete') }}',
             body		: '确定要删除管理员 ' + data.username + ' 吗？',
             data		: data
         });
         return false;
-    });*/
+    });
 </script>
 @endpush
