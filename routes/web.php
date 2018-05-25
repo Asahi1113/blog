@@ -15,30 +15,47 @@ Route::get('/','IndexController@index');
 //登录
 Route::get('admin/login','Admin\LoginController@login');
 Route::post('admin/login','Admin\LoginController@postLogin');
-//后台
-Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['admin.login','admin.operation']],function(){
+//后台管理
+Route::group([
+    'namespace' => 'Admin',
+    'prefix' => 'admin',
+    'middleware' => [
+        'admin.login',
+        'admin.operation'
+    ]
+],function(){
+    //仪表盘
     Route::get('index',[
-        'as'=>'AdminDashboard',
-        'uses'=>'IndexController@index'
+        'as' => 'AdminDashboard',
+        'uses' => 'IndexController@index'
     ]);
+    //退出登录
     Route::get('logout',[
-        'as'=>'AdminLogout',
-        'uses'=>'LoginController@logout'
+        'as' => 'AdminLogout',
+        'uses' => 'LoginController@logout'
     ]);
+    //修改密码
     Route::get('modify-password',[
-        'as'=>'AdminChangePassowrd',
-        'uses'=>'profileController@getModifyPassword'
+        'as' => 'AdminChangePassowrd',
+        'uses' => 'profileController@getModifyPassword'
     ]);
     Route::post('modify-password',[
-        'as'=>'AdminChangePassowrdPost',
-        'uses'=>'profileController@postModifyPassword'
+        'as' => 'AdminChangePassowrdPost',
+        'uses' => 'profileController@postModifyPassword'
     ]);
+    //管理员账号
     Route::get('admin-list',[
-        'as'=>'AdminList',
-        'uses'=>'adminController@getList'
+        'as' => 'AdminList',
+        'uses' => 'adminController@getList'
     ]);
+    //删除管理员
     Route::post('admin-delete',[
-        'as'=>'AdminDelete',
-        'uses'=>'adminController@postDelete'
+        'as' => 'AdminDelete',
+        'uses' => 'adminController@postDelete'
+    ]);
+    //操作日志列表
+    Route::get('operation-record-list',[
+        'as' => 'AdminOperationRecordList',
+        'uses' => 'OperationRecordController@getList'
     ]);
 });
