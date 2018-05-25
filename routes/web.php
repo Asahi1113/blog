@@ -16,7 +16,7 @@ Route::get('/','IndexController@index');
 Route::get('admin/login','Admin\LoginController@login');
 Route::post('admin/login','Admin\LoginController@postLogin');
 //后台
-Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['admin.login']],function(){
+Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>['admin.login','admin.operation']],function(){
     Route::get('index','IndexController@index');
     Route::get('logout','LoginController@logout');
     Route::get('modify-password','profileController@getModifyPassword');
