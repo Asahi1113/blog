@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3fa1753e857909f300d6c113f7744c7",
+    "content-hash": "a42c7b111b57d288ddd07459219ec1d5",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -671,49 +671,6 @@
                 "psysh"
             ],
             "time": "2018-04-16T12:10:37+00:00"
-        },
-        {
-            "name": "latrell/qqwry",
-            "version": "1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/latrell/QQWry.git",
-                "reference": "984a1a152e49d9d41f84b2abfb8142ce9109c2e8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://files.phpcomposer.com/files/latrell/QQWry/984a1a152e49d9d41f84b2abfb8142ce9109c2e8.zip",
-                "reference": "984a1a152e49d9d41f84b2abfb8142ce9109c2e8",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.*",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Latrell\\QQWry\\": "src/Latrell/QQWry/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Latrell Chan",
-                    "email": "i@latrell.me"
-                }
-            ],
-            "description": "纯真 IP 库 Laravel 版 。",
-            "keywords": [
-                "l5",
-                "laravel",
-                "laravel 5",
-                "qqwry"
-            ],
-            "time": "2017-04-16T05:08:34+00:00"
         },
         {
             "name": "league/flysystem",

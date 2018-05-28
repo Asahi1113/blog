@@ -68,7 +68,6 @@ class OperationRecordController extends CommonController
         // 系统中的所有管理员列表。
         $users = Admin::all('id','username');
 
-
         // 取得系统控制器列表。
         $routes = collect();
         foreach (Route::getRoutes() as $route) {
@@ -79,6 +78,7 @@ class OperationRecordController extends CommonController
             }
         }
         $routes = $routes->sort();
+
         return view('admin.operation-record.list', compact('data', 'users', 'routes'));
     }
 }
