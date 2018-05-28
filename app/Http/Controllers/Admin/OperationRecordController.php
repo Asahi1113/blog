@@ -6,6 +6,7 @@ use App\Models\Admin;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\OperationRecord;
+use Illuminate\Support\Facades\Cookie;
 use Route;
 
 class OperationRecordController extends CommonController
@@ -59,7 +60,7 @@ class OperationRecordController extends CommonController
         }
 
         // 取得单页数据。
-        $data = $model->simplePaginate($request->cookie('limit', 15));
+        $data = $model->simplePaginate($_COOKIE['limit'] ?? 15);
 
         // 附加翻页参数。
         $data->appends($request->all());
