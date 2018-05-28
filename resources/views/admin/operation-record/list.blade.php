@@ -86,7 +86,7 @@
                                     <td>{{ preg_replace('/^routes\./', '', trans('routes.' . $item->route_name)) }}</td>
                                     <td>
                                         @foreach($item->ips as $ip)
-                                            @include('admin.components.tooltip', [ 'text' => $ip, 'title' => $ip/*ip_query($ip)*/ ])
+                                            @include('admin.components.tooltip', [ 'text' => $ip, 'title' => ip_query($ip) ])
                                         @endforeach
                                     </td>
                                     <td>{{ str_limit($item->user_agent, 50) }}</td>

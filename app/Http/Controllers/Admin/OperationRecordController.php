@@ -65,20 +65,19 @@ class OperationRecordController extends CommonController
         $data->appends($request->all());
 
         // 系统中的所有管理员列表。
-        $users = Admin::all('id', 'username');
+        $users = Admin::all('id','username');
+
 
         // 取得系统控制器列表。
         $routes = collect();
         foreach (Route::getRoutes() as $route) {
             $name = $route->getName();
-            $middleware = (array) array_get($route->getAction(), 'middleware');
-            if (! is_null($name) && in_array('permission:root', $middleware)) {
+            if (! is_null($name) && (stripos($name,'.') === false)) {
                 $routes[$name] = trans('routes.' . $name);
                 $routes[$name] = preg_replace('/^routes\./', '', $routes[$name]);
             }
         }
         $routes = $routes->sort();
-
         return view('admin.operation-record.list', compact('data', 'users', 'routes'));
     }
 }
