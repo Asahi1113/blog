@@ -12,8 +12,8 @@ class OperationRecord extends Model
 {
     protected $casts = [
         'id' => 'integer',
-        'user_id' => 'integer',
-        'user_type' => 'string',
+        'admin_id' => 'integer',
+        'admin_type' => 'string',
         'method' => 'string',
         'path' => 'string',
         'input' => 'collection',
@@ -35,7 +35,7 @@ class OperationRecord extends Model
     /**
      * 所属用户
      */
-    public function user()
+    public function admin()
     {
         return $this->morphTo();
     }

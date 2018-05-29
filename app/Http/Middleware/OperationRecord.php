@@ -22,7 +22,7 @@ class OperationRecord
 
         // 记录请求。
         $record = new OperationRecordModel();
-        $record->user()->associate($admin);
+        $record->admin()->associate($admin);
         $record->method = $request->getMethod();
         $record->route_name = Route::currentRouteName();
         $record->route_action = Route::currentRouteAction();

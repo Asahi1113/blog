@@ -34,12 +34,12 @@ class OperationRecordController extends CommonController
         }
 
         // 取得数据模型。
-        $model = OperationRecord::with('user')->latest()->where('user_type', Admin::class);
+        $model = OperationRecord::with('admin')->latest()->where('admin_type', Admin::class);
 
         // 附加筛选条件。
         foreach ([
                      'id',
-                     'user_id',
+                     'admin_id',
                      'method',
                      'route_name'
                  ] as $field) {

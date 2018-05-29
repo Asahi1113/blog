@@ -10,7 +10,7 @@ class IndexController extends CommonController
     //仪表盘
     public function index()
     {
-        $operation_records = OperationRecord::where('user_id',session('admin')->id)
+        $operation_records = OperationRecord::where('admin_id',session('admin')->id)
             ->where('method','post')
             ->select('id', 'route_name', 'user_agent', 'ips', 'created_at')
             ->limit(10)

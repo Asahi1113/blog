@@ -20,11 +20,11 @@ class CreateOperationRecordsTable extends Migration
 
             // 所属用户。
             // $table->morphs('user');
-            $table->unsignedInteger('user_id')->comment('所属用户ID');
-            $table->string('user_type', 100)->comment('所属用户类型');
+            $table->unsignedInteger('admin_id')->comment('所属管理员ID');
+            $table->string('admin_type', 100)->comment('所属管理员类型');
             $table->index([
-                'user_id',
-                'user_type'
+                'admin_id',
+                'admin_type'
             ]);
 
             $table->string('method', 8)->comment('请求方法');

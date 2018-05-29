@@ -35,11 +35,11 @@
                         </tr>
                         <tr>
                             <th>管理员</th>
-                            <td>{{ $data->user->username }}</td>
+                            <td>{{ $data->admin->username }}</td>
                         </tr>
                         <tr>
                             <th>模型</th>
-                            <td>{{ class_basename($data->user_type) }}</td>
+                            <td>{{ class_basename($data->admin_type) }}</td>
                         </tr>
                         <tr>
                             <th>请求方式</th>

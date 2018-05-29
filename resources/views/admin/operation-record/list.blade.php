@@ -28,10 +28,10 @@
                     <form class="form-inline" role="form">
                         <div class="form-group">
                             <label class="sr-only" for="InputUserId">管理员</label>
-                            <select id="InputUserId" class="form-control select2-multiple" name="user_id" style="height: 33px; min-width: 180px;">
+                            <select id="InputUserId" class="form-control select2-multiple" name="admin_id" style="height: 33px; min-width: 180px;">
                                 <option value=""></option>
                                 @foreach ($users as $user)
-                                    <option value="{{ $user->id }}" @if ($user->id == Request::get('user_id')) selected @endif >{{ $user->username }}</option>
+                                    <option value="{{ $user->id }}" @if ($user->id == Request::get('admin_id')) selected @endif >{{ $user->username }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -82,7 +82,7 @@
                             @foreach ($data as $item)
                                 <tr>
                                     <td>{{ $item->created_at }}</td>
-                                    <td>{{ $item->user->username }}</td>
+                                    <td>{{ $item->admin->username }}</td>
                                     <td>{{ preg_replace('/^routes\./', '', trans('routes.' . $item->route_name)) }}</td>
                                     <td>
                                         @foreach($item->ips as $ip)

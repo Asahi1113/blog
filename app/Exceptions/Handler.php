@@ -54,6 +54,7 @@ class Handler extends ExceptionHandler
     }
 
     /**
+     * 定制错误界面
      * Render the given HttpException.
      *
      * @param  \Symfony\Component\HttpKernel\Exception\HttpException  $e
