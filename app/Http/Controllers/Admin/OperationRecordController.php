@@ -82,8 +82,12 @@ class OperationRecordController extends CommonController
         return view('admin.operation-record.list', compact('data', 'users', 'routes'));
     }
 
-    public function getDetail()
+    public function getDetail(Request $request)
     {
-        return 11;
+        $data = OperationRecord::find($request->id);
+        if (is_null($data)) {
+            abort(404);
+        }
+        return view('admin.operation-record.detail', compact('data'));
     }
 }

@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Route;
 
 class Handler extends ExceptionHandler
 {
@@ -49,5 +51,26 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         return parent::render($request, $exception);
+    }
+
+    /**
+     * Render the given HttpException.
+     *
+     * @param  \Symfony\Component\HttpKernel\Exception\HttpException  $e
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    protected function renderHttpException(HttpException $e)
+    {
+        $status = $e->getStatusCode();
+
+        $prefix = strtolower(preg_replace('/^(.+?)[A-Z].*/u', '$1', Route::currentRouteName()));
+
+        if (view()->exists("{$prefix}.errors.{$status}")) {
+            return response()->view("{$prefix}.errors.{$status}", [
+                'exception' => $e
+            ], $status, $e->getHeaders());
+        }
+
+        return parent::renderHttpException($e);
     }
 }
