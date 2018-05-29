@@ -81,4 +81,9 @@ class OperationRecordController extends CommonController
 
         return view('admin.operation-record.list', compact('data', 'users', 'routes'));
     }
+
+    public function getDetail()
+    {
+        return 11;
+    }
 }

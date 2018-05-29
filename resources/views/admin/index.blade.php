@@ -11,9 +11,9 @@
                     最近操作
                 </header>
                 <div class="panel-body">
-                    {{--@if ($operation_records->isEmpty())
+                    @if ($operation_records->isEmpty())
                         <p class="text-center">没有任何项目</p>
-                    @else--}}
+                    @else
                         <table class="table">
                             <thead>
                             <tr>
@@ -24,16 +24,20 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach ($operation_records as $item)
                                 <tr>
-                                    <td>2018-05-22 10:46:22</td>
-                                    <td>编辑管理员（操作）</td>
+                                    <td>{{ $item->created_at }}</td>
+                                    <td>{{ preg_replace('/^routes\./', '', trans('routes.' . $item->route_name)) }}</td>
                                     <td>
-                                        <span class="tooltips " data-toggle="tooltip" data-placement="top" data-original-title="纯真网络 2017年9月15日IP数据">127.0.0.1</span>														</td>
+                                        @foreach($item->ips as $ip)
+                                            @include('admin.components.tooltip', [ 'text' => $ip, 'title' => $ip ])
+                                        @endforeach
                                     </td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
-                    {{--@endif--}}
+                    @endif
                 </div>
             </section>
         </div>

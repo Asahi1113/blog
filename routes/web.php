@@ -58,4 +58,9 @@ Route::group([
         'as' => 'AdminOperationRecordList',
         'uses' => 'OperationRecordController@getList'
     ]);
+    //操作日志详情
+    Route::get('operation-record-detail',[
+        'as' => 'AdminOperationRecordDetail',
+        'uses' => 'OperationRecordController@getDetail'
+    ]);
 });

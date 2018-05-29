@@ -91,7 +91,7 @@
                                     </td>
                                     <td>{{ str_limit($item->user_agent, 50) }}</td>
                                     <td>
-                                        <a class="btn btn-xs btn-info" href="{{--{{ route('RootOperationRecordDetail', [ 'id' => $item->id ]) }}--}}"><i class="fa fa-info"></i> 详情</a>
+                                        <a class="btn btn-xs btn-info" href="{{ route('AdminOperationRecordDetail', [ 'id' => $item->id ]) }}"><i class="fa fa-info"></i> 详情</a>
                                     </td>
                                 </tr>
                             @endforeach
