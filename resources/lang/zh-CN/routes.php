@@ -7,5 +7,6 @@ return [
     'AdminList' => '管理员账号',
     'AdminDelete' => '删除管理员',
     'AdminOperationRecordList' => '操作记录列表',
-    'AdminOperationRecordDetail' => '操作记录详情'
+    'AdminOperationRecordDetail' => '操作记录详情',
+    'AdminOperationRecordResponseView' => '查看响应内容'
 ];

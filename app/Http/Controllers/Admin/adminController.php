@@ -21,7 +21,7 @@ class adminController extends CommonController
                 $admins->{is_array($value) ? 'whereIn' : 'where'}($field, $value);
             }
         }
-        $data = $admins->paginate($request->cookie('limit', 15));
+        $data = $admins->paginate($_COOKIE['limit'] ?? 15);
         $data->appends($request->all());
         return view('admin.admin.list',compact('data'));
     }

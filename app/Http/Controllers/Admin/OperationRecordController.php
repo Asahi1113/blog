@@ -82,6 +82,9 @@ class OperationRecordController extends CommonController
         return view('admin.operation-record.list', compact('data', 'users', 'routes'));
     }
 
+    /*
+     * 操作记录详情
+     */
     public function getDetail(Request $request)
     {
         $data = OperationRecord::find($request->id);
@@ -89,5 +92,27 @@ class OperationRecordController extends CommonController
             abort(404);
         }
         return view('admin.operation-record.detail', compact('data'));
+    }
+
+    /*
+     * 响应内容查看
+     */
+    public function getResponseView(Request $request)
+    {
+        // 取出记录。
+        $data = OperationRecord::find($request->id, [
+            'response'
+        ]);
+        if (is_null($data)) {
+            abort(404);
+        }
+
+        // 取出响应的页面。
+        $content = $data->response['content'];
+
+        // 注释掉302跳转代码。
+        $content = preg_replace('#\<meta\s+http-equiv="refresh"\s+content="[^"]+"\s*/?\>#i', '<!-- $0 -->', $content);
+
+        return view('admin.operation-record.response-view', compact('content'));
     }
 }

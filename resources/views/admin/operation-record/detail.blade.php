@@ -93,7 +93,7 @@
                         </tr>
                         <tr>
                             <th>响应内容</th>
-                            <td><a href="{{--{{ route('RootOperationRecordResponseView', [ 'id' => $data->id ]) }}--}}" target="_blank">查看</a></td>
+                            <td><a href="{{ route('AdminOperationRecordResponseView', [ 'id' => $data->id ]) }}" target="_blank">查看</a></td>
                         </tr>
                         </tbody>
                     </table>

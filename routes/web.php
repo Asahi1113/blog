@@ -63,4 +63,9 @@ Route::group([
         'as' => 'AdminOperationRecordDetail',
         'uses' => 'OperationRecordController@getDetail'
     ]);
+    //响应内容查看
+    Route::get('operation-record-response',[
+        'as' => 'AdminOperationRecordResponseView',
+        'uses' => 'OperationRecordController@getResponseView'
+    ]);
 });
