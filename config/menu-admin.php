@@ -30,7 +30,7 @@ return [
         '市场价数据' => 'AdminDashboard',
         '法币汇率' => 'AdminDashboard',
         '国家信息' => 'AdminDashboard',
-        '货币信息' => 'AdminDashboard',
+        '货币信息' => 'AdminCurrencyList',
         '操作日志' => 'AdminOperationRecordList'
     ],
     '<i class="fa fa-cogs"></i> <span>管理人员</span>' => [

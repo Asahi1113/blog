@@ -95,7 +95,7 @@ class OperationRecordController extends CommonController
     }
 
     /*
-     * 响应内容查看
+     * 查看响应内容
      */
     public function getResponseView(Request $request)
     {

@@ -63,9 +63,14 @@ Route::group([
         'as' => 'AdminOperationRecordDetail',
         'uses' => 'OperationRecordController@getDetail'
     ]);
-    //响应内容查看
+    //查看响应内容
     Route::get('operation-record-response',[
         'as' => 'AdminOperationRecordResponseView',
         'uses' => 'OperationRecordController@getResponseView'
+    ]);
+    //货币信息
+    Route::get('currency-list',[
+        'as' => 'AdminCurrencyList',
+        'uses' => 'CurrencyController@getList'
     ]);
 });
