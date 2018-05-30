@@ -29,7 +29,7 @@ return [
         '系统配置' => 'AdminDashboard',
         '市场价数据' => 'AdminDashboard',
         '法币汇率' => 'AdminDashboard',
-        '国家信息' => 'AdminDashboard',
+        '国家信息' => 'AdminCountryList',
         '货币信息' => 'AdminCurrencyList',
         '操作日志' => 'AdminOperationRecordList'
     ],

@@ -73,4 +73,9 @@ Route::group([
         'as' => 'AdminCurrencyList',
         'uses' => 'CurrencyController@getList'
     ]);
+    //货币信息
+    Route::get('country-list',[
+        'as' => 'AdminCountryList',
+        'uses' => 'CountryController@getList'
+    ]);
 });

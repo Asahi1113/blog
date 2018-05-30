@@ -9,5 +9,6 @@ return [
     'AdminOperationRecordList' => '操作记录列表',
     'AdminOperationRecordDetail' => '操作记录详情',
     'AdminOperationRecordResponseView' => '查看响应内容',
-    'AdminCurrencyList' => '货币信息'
+    'AdminCurrencyList' => '货币信息',
+    'AdminCountryList' => '国家信息'
 ];
