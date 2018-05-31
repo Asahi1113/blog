@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 
-class adminController extends CommonController
+class AdminController extends CommonController
 {
     //管理员账号
     public function getList(Request $request)

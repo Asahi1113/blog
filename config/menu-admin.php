@@ -35,7 +35,7 @@ return [
     ],
     '<i class="fa fa-cogs"></i> <span>管理人员</span>' => [
         '管理员账号' => 'AdminList',
-        '角色管理' => 'AdminDashboard',
+        '角色管理' => 'AdminRoleList',
         '权限管理' => 'AdminDashboard'
     ],
     '<i class="fa fa-lock"></i> <span>账号信息</span>' => [

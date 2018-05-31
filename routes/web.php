@@ -37,21 +37,21 @@ Route::group([
     //修改密码
     Route::get('modify-password',[
         'as' => 'AdminChangePassowrd',
-        'uses' => 'profileController@getModifyPassword'
+        'uses' => 'ProfileController@getModifyPassword'
     ]);
     Route::post('modify-password',[
         'as' => 'AdminChangePassowrdPost',
-        'uses' => 'profileController@postModifyPassword'
+        'uses' => 'ProfileController@postModifyPassword'
     ]);
     //管理员账号
     Route::get('admin-list',[
         'as' => 'AdminList',
-        'uses' => 'adminController@getList'
+        'uses' => 'AdminController@getList'
     ]);
     //删除管理员
     Route::post('admin-delete',[
         'as' => 'AdminDelete',
-        'uses' => 'adminController@postDelete'
+        'uses' => 'AdminController@postDelete'
     ]);
     //操作日志列表
     Route::get('operation-record-list',[
@@ -77,5 +77,10 @@ Route::group([
     Route::get('country-list',[
         'as' => 'AdminCountryList',
         'uses' => 'CountryController@getList'
+    ]);
+    //角色列表
+    Route::get('role-list',[
+        'as' => 'AdminRoleList',
+        'uses' => 'RoleController@getList'
     ]);
 });

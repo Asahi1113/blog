@@ -18,3 +18,18 @@ if (! function_exists('ip_query')) {
         return $result;
     }
 }
+if (! function_exists('has_role')) {
+
+    /**
+     * 检查用户是否拥有指定角色
+     */
+    function has_role($user, $role)
+    {
+        foreach ($role->permissions as $permission) {
+            if (! has_permission($user, $permission)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
