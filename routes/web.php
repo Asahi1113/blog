@@ -83,4 +83,9 @@ Route::group([
         'as' => 'AdminRoleList',
         'uses' => 'RoleController@getList'
     ]);
+    //删除角色
+    Route::post('role-delete',[
+        'as' => 'AdminRoleDelete',
+        'uses' => 'RoleController@postDelete'
+    ]);
 });

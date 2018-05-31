@@ -56,4 +56,24 @@ class RoleController extends CommonController
 
         return view('admin.role.list', compact('data'));
     }
+
+    /*
+     * 删除角色
+     */
+    public function postDelete(Request $request)
+    {
+        // 验证输入。
+        $this->validate($request, [
+            'id' => 'required|exists:roles'
+        ]);
+
+        // 取得要删除的角色。
+        $data = Role::find($request->id);
+        if ($data) {
+            $data->delete();
+        }
+
+        // 返回成功信息。
+        return redirect()->back()->withMessageSuccess('删除成功。');
+    }
 }

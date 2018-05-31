@@ -62,7 +62,7 @@
     $('[data-role="delete"]').on('click', function(){
         var data = $(this).parents('tr').data();
         iconfirm({
-            action	: '{{--{{ route('RootRoleDelete') }}--}}',
+            action	: '{{ route('AdminRoleDelete') }}',
             body		: '确定要删除角色 ' + data.name + ' 吗？',
             data		: data
         });
