@@ -1,18 +1,17 @@
-
-@foreach($list as $val)
+{{--@foreach($list as $val)--}}
 <article>
 	<header class="entry-header">
-		<h1 class="entry-title"><a href="{{ $val->getLinkUrl() }}" title="{{ $val->title }}" rel="bookmark">{{ $val->title }}</a></h1>
+		<h1 class="entry-title"><a href="{{--{{ $val->getLinkUrl() }}--}}" title="{{--{{ $val->title }}--}}" rel="bookmark">{{--{{ $val->title }}--}}</a></h1>
 	</header>
 
-	@if($val->thumb)
+	{{--@if($val->thumb)
 		<div class="entry-content">
 			<img src="{{ $val->thumb }}" alt="{{ $val->title }}" width="700">
 		</div>
-	@endif
+	@endif--}}
 
-	<div class="entry-content">{{ $val->description }}</div>
+	<div class="entry-content">撒大声地所多所多{{--{{ $val->description }}--}}</div>
 
-	@include('index._tag', ['val'=> $val])
+	@include('index._tag'/*, ['val'=> $val]*/)
 </article>
-@endforeach
+{{--@endforeach--}}

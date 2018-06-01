@@ -10,6 +10,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('login.create');
+        $list = '';
+        return view('index.index',compact('list'));
     }
 }

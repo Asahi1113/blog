@@ -10,9 +10,9 @@
 <!--<![endif]-->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>@yield('title', '首页') - {{ $cfg->title }}</title>
-	<meta name="keywords" content="{{ $cfg->keyword }}"/>
-	<meta name="description" content="{{ $cfg->description }}" />
+	<title>@yield('title', '首页') - 博客{{--{{ $cfg->title }}--}}</title>
+	<meta name="keywords" content="{{--{{ $cfg->keyword }}--}}"/>
+	<meta name="description" content="{{--{{ $cfg->description }}--}}" />
 	<link rel="stylesheet" id="twentytwelve-style-css" href="{{ asset('front/css/index.css') }}" type="text/css" media="all" />
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" id="twentytwelve-ie-css"  href="{{ asset('front/css/ie.css') }}" type="text/css" media="all" />
@@ -35,24 +35,29 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
-			<h1 class="site-title"><a href="{{ route('home') }}" title="{{ $cfg->name }}" rel="home">{{ $cfg->name }}</a></h1>
-			<h2 class="site-description">{{ $cfg->description }}</h2>
+			<h1 class="site-title"><a href="{{--{{ route('home') }}--}}" title="{{--{{ $cfg->name }}--}}" rel="home">Jack Ren</a></h1>
+			<h2 class="site-description">相信梦想是价值的源泉，相信眼光决定未来的一切，相信成功的信念比成功本身更重要，相信人生有挫折没有失败，相信生命的质量来自决不妥协的信念。</h2>
 		</hgroup>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<ul class="nav-menu">
-				<li><a href="{{ route('home') }}">首页</a></li>
-				@foreach($navs as $val)
-				<li><a href="{{ $val->getLinkUrl() }}">{{ $val->name }}</a>
+				<li><a href="{{--{{ route('home') }}--}}">首页</a></li>
+				{{--@foreach($navs as $val)--}}
+				<li><a href="{{--{{ $val->getLinkUrl() }}--}}">mysql{{--{{ $val->name }}--}}</a>
 					<ul class="sub-menu">
-						@if(isset($val->child))
-							@foreach($val->child as $v)
-								<li><a href="{{ $v->getLinkUrl() }}">{{ $v->name }}</a></li>
-							@endforeach
-						@endif
+						{{--@if(isset($val->child))
+							@foreach($val->child as $v)--}}
+								<li><a href="{{--{{ $v->getLinkUrl() }}--}}">mysql大数据处理{{--{{ $v->name }}--}}</a></li>
+						{{--	@endforeach
+						@endif--}}
 					</ul>
 				</li>
-				@endforeach
+				<li><a href="{{--{{ $val->getLinkUrl() }}--}}">redis{{--{{ $val->name }}--}}</a>
+					<ul class="sub-menu">
+						<li><a href="{{--{{ $v->getLinkUrl() }}--}}">redis分布式缓存技术{{--{{ $v->name }}--}}</a></li>
+					</ul>
+				</li>
+				{{--@endforeach--}}
 			</ul>
 		</nav>
 	</header>
@@ -77,7 +82,7 @@
 				<script type="text/javascript">
 					$(function (){
 						$("#searchsubmit").click(function (){
-							location.href = "{{ route('home') }}" + "/search/"+$("#s").val()+'.html';
+							location.href = "{{--{{ route('home') }}--}}aa" + "/search/"+$("#s").val()+'.html';
 							return false;
 						});
 					});
@@ -87,36 +92,40 @@
 			<aside id="recent-posts-2" class="widget widget_recent_entries">
 				<h3 class="widget-title">热门文章</h3>
 				<ul>
-					@foreach($hot_articles as $val)
-					<li><font style="color:#7a7a7a;">[{{ $loop->iteration }}]</font>&nbsp;<a href="{{ $val->getLinkUrl() }}" title="{{ $val->title }}">{{ $val->title }}</a></li>
-					@endforeach
+					{{--@foreach($hot_articles as $val)--}}
+					<li><font style="color:#7a7a7a;">1{{--[{{ $loop->iteration }}]--}}</font>&nbsp;<a href="{{--{{ $val->getLinkUrl() }}--}}" title="{{--{{ $val->title }}--}}">php{{--{{ $val->title }}--}}</a></li>
+					<li><font style="color:#7a7a7a;">2</font>&nbsp;<a href="###" title="###">java</a></li>
+
+					{{--@endforeach--}}
 				</ul>
 			</aside>
 
 			<aside id="recent-comments-2" class="widget widget_recent_comments">
 				<h3 class="widget-title">近期评论</h3>
 				<ul id="recentcomments">
-					@foreach($comments as $val)
-					<li class="recentcomments">{{ $val->user->username }} 发表在《<a href="{{ $val->article->getLinkUrl() }}" title="{{ $val->article->title }}">{{ $val->article->title }}</a>》</li>
-					@endforeach
+					{{--@foreach($comments as $val)--}}
+					<li class="recentcomments">张旭发表在《<a href="{{--{{ $val->article->getLinkUrl() }}--}}" title="{{--{{ $val->article->title }}--}}">关于PHP程序员技术职业生涯规划{{--{{ $val->article->title }}--}}</a>》</li>
+					<li class="recentcomments">高厦发表在《<a href="###" title="{{--{{ $val->article->title }}--}}">PHP+Swoole的闭包写法{{--{{ $val->article->title }}--}}</a>》</li>
+
+					{{--@endforeach--}}
 				</ul>
 			</aside>
 
 			<aside id="archives-2" class="widget widget_archive">
 				<h3 class="widget-title">文章归档</h3>
 				<ul>
-					@foreach($files as $val)
-						<li><a href="{{ route('time', $val->pub_date) }}" title="{{ $val->pub_date }}">{{ date('Y年m月', strtotime($val->pub_date)) }}</a>&nbsp;<font style="color:#7a7a7a;">({{ $val->num }})</font></li>
-					@endforeach
+					{{--@foreach($files as $val)--}}
+						<li><a href="{{--{{ route('time', $val->pub_date) }}--}}" title="{{--{{ $val->pub_date }}--}}">2017年3月{{--{{ date('Y年m月', strtotime($val->pub_date)) }}--}}</a>&nbsp;<font style="color:#7a7a7a;">(1{{--{{ $val->num }}--}})</font></li>
+					{{--@endforeach--}}
 				</ul>
 			</aside>
 
 			<aside id="categories-2" class="widget widget_categories">
 				<h3 class="widget-title">分类目录</h3>
 				<ul>
-					@foreach($navs as $val)
-						<li class="cat-item cat-item-2"><a href="{{ $val->getLinkUrl() }}" title="{{ $val->name }}">{{ $val->name }}</a></li>
-					@endforeach
+					{{--@foreach($navs as $val)--}}
+						<li class="cat-item cat-item-2"><a href="###{{--{{ $val->getLinkUrl() }}--}}" title="{{--{{ $val->name }}--}}">PHP并发IO编程之路{{--{{ $val->name }}--}}</a></li>
+					{{--@endforeach--}}
 				</ul>
 			</aside>
 
@@ -124,9 +133,9 @@
 				<h3 class="widget-title">热门标签(<font style="font-weight:normal;">字体越大表示标签越热门额</font>^-^)</h3>
 				<ul>
 					<li class="cat-item cat-item-2">
-						@foreach($tags as $val)
-						<a href="{{ $val->getLinkUrl() }}" title="{{ $val->name }}" style="font-size:{{ $val->getFontSize()  }}px;text-decoration:none;">{{ $val->name }}</a> &nbsp;
-						@endforeach
+						{{--@foreach($tags as $val)--}}
+						<a href="###{{--{{ $val->getLinkUrl() }}--}}" title="{{--{{ $val->name }}--}}" style="font-size:{{--{{ $val->getFontSize()  }}--}}px;text-decoration:none;">PHP+Swoole的闭包写法{{--{{ $val->name }}--}}</a> &nbsp;
+						{{--@endforeach--}}
 					</li>
 				</ul>
 			</aside>
@@ -136,16 +145,15 @@
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
 			<span>友情链接：</span>
-			@foreach($links as $val)
-			<a href="{{ $val->url }}" {{ $val->target ? 'target="_blank"' : '' }}>{{ $val->name }}</a>
-			@endforeach
+			<a href="https://laravel-china.org/" target="_blank">Laravel China</a>
+			<a href="https://www.swoole.com/" target="_blank">Swoole</a>
 		</div>
 	</footer>
 
 	<footer role="contentinfo" style="margin-top:0;">
 		<div class="site-info" style="text-align:center;">
-			<span>{{ $cfg->icp }}</span>
-			<span style="position:relative;top:2px;">{!! $cfg->code !!}</span>
+			<span>aaa{{--{{ $cfg->icp }}--}}</span>
+			<span style="position:relative;top:2px;">ccc{{--{!! $cfg->code !!}--}}</span>
 		</div>
 	</footer>
 
