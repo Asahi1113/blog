@@ -88,4 +88,9 @@ Route::group([
         'as' => 'AdminRoleDelete',
         'uses' => 'RoleController@postDelete'
     ]);
+    //权限列表
+    Route::get('permission-list',[
+        'as' => 'AdminPermissionList',
+        'uses' => 'PermissionController@getList'
+    ]);
 });

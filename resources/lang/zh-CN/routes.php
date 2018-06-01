@@ -12,5 +12,6 @@ return [
     'AdminCurrencyList' => '货币信息',
     'AdminCountryList' => '国家信息',
     'AdminRoleList' => '角色列表',
-    'AdminRoleDelete' => '删除角色'
+    'AdminRoleDelete' => '删除角色',
+    'AdminPermissionList' => '权限列表'
 ];

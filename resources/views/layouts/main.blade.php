@@ -10,7 +10,7 @@
 <!--<![endif]-->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>@yield('title', '首页') - 博客{{--{{ $cfg->title }}--}}</title>
+	<title>@yield('title', '首页') - 首页{{--{{ $cfg->title }}--}}</title>
 	<meta name="keywords" content="{{--{{ $cfg->keyword }}--}}"/>
 	<meta name="description" content="{{--{{ $cfg->description }}--}}" />
 	<link rel="stylesheet" id="twentytwelve-style-css" href="{{ asset('front/css/index.css') }}" type="text/css" media="all" />
