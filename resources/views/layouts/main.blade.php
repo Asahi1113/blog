@@ -164,4 +164,12 @@
 
 	<footer role="contentinfo" style="margin-top:0;">
 		<div class="site-info" style="text-align:center;">
-			<span>Copyright
+			<span>© 2018 Jack Ren.个人博客</span>
+			<span style="position:relative;top:2px;"></span>
+		</div>
+	</footer>
+
+</div>
+
+</body>
+</html>
