@@ -12,11 +12,11 @@
 
 		<div class=" card-box">
 			<div class="panel-heading">
-				<h3 class="text-center"> 注册 <strong class="text-custom">{{ $cfg->title }}</strong> </h3>
+				<h3 class="text-center"> 注册 <strong class="text-custom">{{--{{ $cfg->title }}--}}</strong> </h3>
 			</div>
 
 			<div class="panel-body">
-				<form class="form-horizontal m-t-20" action="{{ route('signup') }}" method="POST">
+				<form class="form-horizontal m-t-20" action="{{--{{ route('signup') }}--}}" method="POST">
 					{{ csrf_field() }}
 
 					<div class="form-group ">
@@ -59,7 +59,7 @@
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<p>
-					已有账号?<a href="{{ route('login') }}" class="text-primary m-l-5"><b> 登录</b></a>
+					已有账号?<a href="{{--{{ route('login') }}--}}" class="text-primary m-l-5"><b> 登录</b></a>
 				</p>
 			</div>
 		</div>

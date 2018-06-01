@@ -43,18 +43,18 @@
 			<ul class="nav-menu">
 				<li><a href="{{--{{ route('home') }}--}}">首页</a></li>
 				{{--@foreach($navs as $val)--}}
-				<li><a href="{{--{{ $val->getLinkUrl() }}--}}">mysql{{--{{ $val->name }}--}}</a>
+				<li><a href="{{--{{ $val->getLinkUrl() }}--}}">编程{{--{{ $val->name }}--}}</a>
 					<ul class="sub-menu">
 						{{--@if(isset($val->child))
 							@foreach($val->child as $v)--}}
-								<li><a href="{{--{{ $v->getLinkUrl() }}--}}">mysql大数据处理{{--{{ $v->name }}--}}</a></li>
+								<li><a href="{{--{{ $v->getLinkUrl() }}--}}">技术生涯{{--{{ $v->name }}--}}</a></li>
 						{{--	@endforeach
 						@endif--}}
 					</ul>
 				</li>
-				<li><a href="{{--{{ $val->getLinkUrl() }}--}}">redis{{--{{ $val->name }}--}}</a>
+				<li><a href="{{--{{ $val->getLinkUrl() }}--}}">随笔{{--{{ $val->name }}--}}</a>
 					<ul class="sub-menu">
-						<li><a href="{{--{{ $v->getLinkUrl() }}--}}">redis分布式缓存技术{{--{{ $v->name }}--}}</a></li>
+						<li><a href="{{--{{ $v->getLinkUrl() }}--}}">生活感悟{{--{{ $v->name }}--}}</a></li>
 					</ul>
 				</li>
 				{{--@endforeach--}}
@@ -124,7 +124,10 @@
 				<h3 class="widget-title">分类目录</h3>
 				<ul>
 					{{--@foreach($navs as $val)--}}
-						<li class="cat-item cat-item-2"><a href="###{{--{{ $val->getLinkUrl() }}--}}" title="{{--{{ $val->name }}--}}">PHP并发IO编程之路{{--{{ $val->name }}--}}</a></li>
+						<li class="cat-item cat-item-2"><a href="###{{--{{ $val->getLinkUrl() }}--}}" title="{{--{{ $val->name }}--}}">PHP{{--{{ $val->name }}--}}</a></li>
+						<li class="cat-item cat-item-2"><a href="###{{--{{ $val->getLinkUrl() }}--}}" title="{{--{{ $val->name }}--}}">Centos{{--{{ $val->name }}--}}</a></li>
+						<li class="cat-item cat-item-2"><a href="###{{--{{ $val->getLinkUrl() }}--}}" title="{{--{{ $val->name }}--}}">mysql{{--{{ $val->name }}--}}</a></li>
+
 					{{--@endforeach--}}
 				</ul>
 			</aside>
@@ -133,9 +136,18 @@
 				<h3 class="widget-title">热门标签(<font style="font-weight:normal;">字体越大表示标签越热门额</font>^-^)</h3>
 				<ul>
 					<li class="cat-item cat-item-2">
-						{{--@foreach($tags as $val)--}}
-						<a href="###{{--{{ $val->getLinkUrl() }}--}}" title="{{--{{ $val->name }}--}}" style="font-size:{{--{{ $val->getFontSize()  }}--}}px;text-decoration:none;">PHP+Swoole的闭包写法{{--{{ $val->name }}--}}</a> &nbsp;
-						{{--@endforeach--}}
+						<?php
+							$tags = [
+									['name'=>'PHP+Swoole的闭包写法','font_size'=>12],
+									['name'=>'Centos','font_size'=>18],
+									['name'=>'PHP+Swoole的闭包写法','font_size'=>12],
+									['name'=>'PHP+Swoole的闭包写法','font_size'=>16],
+									['name'=>'闭包写法','font_size'=>24],
+							];
+						?>
+						@foreach($tags as $val)
+						<a href="###{{--{{ $val->getLinkUrl() }}--}}" title="{{ $val['name'] }}" style="font-size:{{ $val['font_size'] }}px;text-decoration:none;">{{$val['name'] }}</a> &nbsp;
+						@endforeach
 					</li>
 				</ul>
 			</aside>
@@ -152,12 +164,4 @@
 
 	<footer role="contentinfo" style="margin-top:0;">
 		<div class="site-info" style="text-align:center;">
-			<span>aaa{{--{{ $cfg->icp }}--}}</span>
-			<span style="position:relative;top:2px;">ccc{{--{!! $cfg->code !!}--}}</span>
-		</div>
-	</footer>
-
-</div>
-
-</body>
-</html>
+			<span>Copyright
