@@ -98,5 +98,10 @@ Route::group([
         'as' => 'AdminPermissionDelete',
         'uses' => 'PermissionController@postDelete'
     ]);
+    //编辑权限
+    Route::get('permission-edit',[
+        'as' => 'AdminPermissionEdit',
+        'uses' => 'PermissionController@getEdit'
+    ]);
 
 });

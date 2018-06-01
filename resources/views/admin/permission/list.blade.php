@@ -17,7 +17,7 @@
                 </header>
                 <div class="tbl-head clearfix">
                     <div class="btn-group">
-                        <a class="btn btn-primary btn-sm" href="{{--{{ route('RootPermissionEdit') }}--}}"><i class="fa fa-plus"></i> 创建</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('AdminPermissionEdit') }}"><i class="fa fa-plus"></i> 创建</a>
                     </div>
                 </div>
                 <div class="panel-body">
@@ -44,7 +44,7 @@
                                     <td>@include('admin.components.tooltip', [ 'text' => str_limit($item->remark, 20), 'title' => $item->remark ])</td>
                                     <td>{{ $item->created_at }}</td>
                                     <td>
-                                        <a class="btn btn-xs btn-info" href="{{--{{ route('RootPermissionEdit', ['key'=>$item->key]) }}--}}"><i class="fa fa-edit"></i> 编辑</a>
+                                        <a class="btn btn-xs btn-info" href="{{ route('AdminPermissionEdit', ['key'=>$item->key]) }}"><i class="fa fa-edit"></i> 编辑</a>
                                         <button class="btn btn-xs btn-danger" type="button" data-role="delete" @if (false) disabled="disabled" @endif ><i class="fa fa-trash-o"></i> 删除</button>
                                     </td>
                                 </tr>
