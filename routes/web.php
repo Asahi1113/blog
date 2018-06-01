@@ -93,4 +93,10 @@ Route::group([
         'as' => 'AdminPermissionList',
         'uses' => 'PermissionController@getList'
     ]);
+    //权限列表
+    Route::post('permission-delete',[
+        'as' => 'AdminPermissionDelete',
+        'uses' => 'PermissionController@postDelete'
+    ]);
+
 });

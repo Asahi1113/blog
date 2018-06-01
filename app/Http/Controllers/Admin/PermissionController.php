@@ -55,4 +55,25 @@ class PermissionController extends CommonController
 
         return view('admin.permission.list', compact('data'));
     }
+
+    /*
+     * 删除权限
+     */
+    public function postDelete(Request $request)
+    {
+        // 验证输入。
+        $this->validate($request, [
+            'key' => 'required|exists:permissions'
+        ]);
+
+        // 取得要删除的权限。
+        $data = Permission::find($request->key);
+        if ($data) {
+            // 删除权限。
+            $data->delete();
+        }
+
+        // 返回成功信息。
+        return redirect()->back()->withMessageSuccess('删除成功。');
+    }
 }

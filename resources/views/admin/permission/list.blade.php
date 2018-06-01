@@ -64,7 +64,7 @@
     $('[data-role="delete"]').on('click', function(){
         var data = $(this).parents('tr').data();
         iconfirm({
-            action	: '{{--{{ route('RootPermissionDelete') }}--}}',
+            action	: '{{ route('AdminPermissionDelete') }}',
             body		: '确定要删除权限 ' + data.name + ' 吗？',
             data		: data
         });

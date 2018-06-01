@@ -13,5 +13,6 @@ return [
     'AdminCountryList' => '国家信息',
     'AdminRoleList' => '角色列表',
     'AdminRoleDelete' => '删除角色',
-    'AdminPermissionList' => '权限列表'
+    'AdminPermissionList' => '权限列表',
+    'AdminPermissionDelete' => '删除权限'
 ];
