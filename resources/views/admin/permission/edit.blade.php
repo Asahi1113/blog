@@ -15,7 +15,7 @@
             <section class="panel">
                 <header class="panel-heading">权限信息</header>
                 <div class="panel-body">
-                    <form method="post" class="form-horizontal" action="{{--{{ route('RootPermissionEditAction') }}--}}">
+                    <form method="post" class="form-horizontal" action="{{ route('AdminPermissionEditAction') }}">
                         {!! csrf_field() !!}
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Key</label>

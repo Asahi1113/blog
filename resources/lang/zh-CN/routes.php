@@ -15,5 +15,6 @@ return [
     'AdminRoleDelete' => '删除角色',
     'AdminPermissionList' => '权限列表',
     'AdminPermissionDelete' => '删除权限',
-    'AdminPermissionEdit' => '编辑权限(页面)'
+    'AdminPermissionEdit' => '编辑权限(页面)',
+    'AdminPermissionEditAction' => '编辑权限(操作)'
 ];

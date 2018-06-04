@@ -103,5 +103,10 @@ Route::group([
         'as' => 'AdminPermissionEdit',
         'uses' => 'PermissionController@getEdit'
     ]);
+    //保存编辑
+    Route::post('permission-save',[
+        'as' => 'AdminPermissionEditAction',
+        'uses' => 'PermissionController@postEdit'
+    ]);
 
 });
